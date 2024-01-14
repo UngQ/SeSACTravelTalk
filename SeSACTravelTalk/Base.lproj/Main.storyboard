@@ -20,22 +20,31 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="72"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-KH-tcY">
-                                        <rect key="frame" x="0.0" y="7" width="393" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="kQb-t1-Jra"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="8" width="393" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="ZZe-Y9-CJr"/>
                                         </connections>
                                     </searchBar>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avq-JF-1cS">
+                                        <rect key="frame" x="0.0" y="71.666666666666657" width="393" height="0.3333333333333286"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="IB4-XI-swH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="ZeQ-KH-tcY" firstAttribute="leading" secondItem="QGg-Ni-QWa" secondAttribute="leading" id="Gul-vw-D9a"/>
+                                    <constraint firstAttribute="bottom" secondItem="Avq-JF-1cS" secondAttribute="bottom" id="L3K-kO-XnV"/>
                                     <constraint firstAttribute="trailing" secondItem="ZeQ-KH-tcY" secondAttribute="trailing" id="VPp-27-Scl"/>
+                                    <constraint firstAttribute="trailing" secondItem="Avq-JF-1cS" secondAttribute="trailing" id="Xu0-YR-aE3"/>
                                     <constraint firstItem="ZeQ-KH-tcY" firstAttribute="centerX" secondItem="QGg-Ni-QWa" secondAttribute="centerX" id="ayO-oM-Z4U"/>
                                     <constraint firstAttribute="height" constant="72" id="oNS-y2-Pey"/>
+                                    <constraint firstItem="Avq-JF-1cS" firstAttribute="leading" secondItem="QGg-Ni-QWa" secondAttribute="leading" id="ooU-Sh-saR"/>
                                     <constraint firstItem="ZeQ-KH-tcY" firstAttribute="centerY" secondItem="QGg-Ni-QWa" secondAttribute="centerY" id="vCB-Xa-aBY"/>
                                 </constraints>
                             </view>
@@ -68,7 +77,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="gC8-a7-Go4"/>
                     <connections>
+                        <outlet property="lineLabel" destination="Avq-JF-1cS" id="LcZ-Vc-mBL"/>
                         <outlet property="mainTableView" destination="vpP-ru-U7g" id="nh2-jC-aWU"/>
+                        <outlet property="searchBar" destination="ZeQ-KH-tcY" id="Ibu-f9-qC9"/>
+                        <outlet property="searchBarView" destination="QGg-Ni-QWa" id="6fh-Ps-fn3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
