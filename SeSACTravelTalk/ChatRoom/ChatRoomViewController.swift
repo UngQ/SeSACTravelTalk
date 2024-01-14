@@ -8,6 +8,9 @@
 import UIKit
 
 class ChatRoomViewController: UIViewController {
+    
+    static let storyboard = "ChatRoom"
+    static let identifier = "ChatRoomViewController"
 
     @IBOutlet var messageFieldView: UIView!
     @IBOutlet var messageField: UITextField!
@@ -46,8 +49,6 @@ class ChatRoomViewController: UIViewController {
             chatroomTableView.reloadData()
         }
     }
-    
-    
 }
 
 //테이블뷰 관련 extension
@@ -61,11 +62,11 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource, Ch
         
         switch filteredChatList[row].chatList[indexPath.row].user {
         case .user:
-            let cell = chatroomTableView.dequeueReusableCell(withIdentifier: "MyMessageTableViewCell", for: indexPath) as! MyMessageTableViewCell
+            let cell = chatroomTableView.dequeueReusableCell(withIdentifier: MyMessageTableViewCell.identifier, for: indexPath) as! MyMessageTableViewCell
             cell.configureCell(row: row, chatListRow: indexPath.row)
             return cell
         default:
-            let cell = chatroomTableView.dequeueReusableCell(withIdentifier: "OpponentMessageTableViewCell", for: indexPath) as! OpponentMessageTableViewCell
+            let cell = chatroomTableView.dequeueReusableCell(withIdentifier: OpponentMessageTableViewCell.identifier, for: indexPath) as! OpponentMessageTableViewCell
             cell.configureCell(row: row, chatListRow: indexPath.row)
             return cell
         }
@@ -86,11 +87,11 @@ extension ChatRoomViewController {
         chatroomTableView.dataSource = self
         chatroomTableView.delegate = self
         
-        let xib = UINib(nibName: "OpponentMessageTableViewCell", bundle: nil)
-        chatroomTableView.register(xib, forCellReuseIdentifier: "OpponentMessageTableViewCell")
+        let xib = UINib(nibName: OpponentMessageTableViewCell.identifier, bundle: nil)
+        chatroomTableView.register(xib, forCellReuseIdentifier: OpponentMessageTableViewCell.identifier)
         
-        let xib2 = UINib(nibName: "MyMessageTableViewCell", bundle: nil)
-        chatroomTableView.register(xib2, forCellReuseIdentifier: "MyMessageTableViewCell")
+        let xib2 = UINib(nibName: MyMessageTableViewCell.identifier, bundle: nil)
+        chatroomTableView.register(xib2, forCellReuseIdentifier: MyMessageTableViewCell.identifier)
         
         chatroomTableView.separatorStyle = .none
         

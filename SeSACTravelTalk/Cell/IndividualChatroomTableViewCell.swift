@@ -8,6 +8,8 @@
 import UIKit
 
 class IndividualChatroomTableViewCell: UITableViewCell, ChangeDateFormat {
+    
+    static let identifier = "IndividualChatroomTableViewCell"
 
     @IBOutlet var profileImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!

@@ -9,6 +9,8 @@ import UIKit
 
 class FourInGroupChatroomTableViewCell: UITableViewCell, ChangeDateFormat {
 
+    static let identifier = "FourInGroupChatroomTableViewCell"
+    
     @IBOutlet var profileImageStackView: UIStackView!
     @IBOutlet var firstProfileImageView: UIImageView!
     @IBOutlet var secondProfileImageView: UIImageView!

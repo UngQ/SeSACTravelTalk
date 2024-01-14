@@ -8,6 +8,8 @@
 import UIKit
 
 class OpponentMessageTableViewCell: UITableViewCell, ChangeDateFormat {
+    
+    static let identifier = "OpponentMessageTableViewCell"
 
     @IBOutlet var profileImageView: UIImageView!
     

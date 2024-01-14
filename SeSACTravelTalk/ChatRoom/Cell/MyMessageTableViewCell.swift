@@ -8,6 +8,8 @@
 import UIKit
 
 class MyMessageTableViewCell: UITableViewCell, ChangeDateFormat {
+    
+    static let identifier = "MyMessageTableViewCell"
 
     @IBOutlet var messageLabelView: UIView!
     @IBOutlet var messageLabel: UILabel!
@@ -22,12 +24,12 @@ class MyMessageTableViewCell: UITableViewCell, ChangeDateFormat {
        messageLabel.text = filteredChatList[row].chatList[chatListRow].message
        messageLabel.font = .systemFont(ofSize: 16)
        messageLabel.numberOfLines = 0
-       messageLabel.backgroundColor = .systemGray
+       messageLabel.backgroundColor = .systemGray5
        
        messageLabelView.layer.borderWidth = 1
        messageLabelView.layer.borderColor = UIColor.systemGray.cgColor
        messageLabelView.layer.cornerRadius = 5
-       messageLabelView.backgroundColor = .systemGray
+       messageLabelView.backgroundColor = .systemGray5
        
        dateLabel.text = changeDateFormatInChatroom(row: row, messageListRow: chatListRow)
        dateLabel.font = .systemFont(ofSize: 10)

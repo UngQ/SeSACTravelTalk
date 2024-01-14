@@ -21,8 +21,6 @@ class ViewController: UIViewController {
         configureMainView()
         
         filteredChatList = mockChatList
-
-        
     }
 }
 
@@ -36,11 +34,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if filteredChatList[indexPath.row].chatroomImage.count == 4 {
-            let cell = mainTableView.dequeueReusableCell(withIdentifier: "FourInGroupChatroomTableViewCell", for: indexPath) as! FourInGroupChatroomTableViewCell
+            let cell = mainTableView.dequeueReusableCell(withIdentifier: FourInGroupChatroomTableViewCell.identifier, for: indexPath) as! FourInGroupChatroomTableViewCell
             cell.configureImageView(row: indexPath.row)
             return cell
         } else {
-            let cell = mainTableView.dequeueReusableCell(withIdentifier: "IndividualChatroomTableViewCell", for: indexPath) as! IndividualChatroomTableViewCell
+            let cell = mainTableView.dequeueReusableCell(withIdentifier: IndividualChatroomTableViewCell.identifier, for: indexPath) as! IndividualChatroomTableViewCell
             cell.configureCell(row: indexPath.row)
             return cell
         }
@@ -52,8 +50,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let storyBoard = UIStoryboard(name: "ChatRoom", bundle: nil)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: "ChatRoomViewController") as! ChatRoomViewController
+        let storyBoard = UIStoryboard(name: ChatRoomViewController.storyboard, bundle: nil)
+        let viewController = storyBoard.instantiateViewController(withIdentifier: ChatRoomViewController.identifier) as! ChatRoomViewController
         navigationController?.pushViewController(viewController, animated: true)
         
         viewController.row = indexPath.row
@@ -104,10 +102,10 @@ extension ViewController {
         mainTableView.dataSource = self
         mainTableView.delegate = self
         
-        let xib = UINib(nibName: "IndividualChatroomTableViewCell", bundle: nil)
-        mainTableView.register(xib, forCellReuseIdentifier: "IndividualChatroomTableViewCell")
+        let xib = UINib(nibName: IndividualChatroomTableViewCell.identifier, bundle: nil)
+        mainTableView.register(xib, forCellReuseIdentifier: IndividualChatroomTableViewCell.identifier)
 
-        let xib2 = UINib(nibName: "FourInGroupChatroomTableViewCell", bundle: nil)
-        mainTableView.register(xib2, forCellReuseIdentifier: "FourInGroupChatroomTableViewCell")
+        let xib2 = UINib(nibName: FourInGroupChatroomTableViewCell.identifier, bundle: nil)
+        mainTableView.register(xib2, forCellReuseIdentifier: FourInGroupChatroomTableViewCell.identifier)
     }
 }
