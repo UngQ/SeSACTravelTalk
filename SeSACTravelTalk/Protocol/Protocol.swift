@@ -10,8 +10,18 @@ import UIKit
 
 protocol ChangeDateFormat {
     
+    func currentTime() -> String
     func changeDateFormat(row:Int) -> String
     func changeDateFormatInChatroom (row: Int, messageListRow: Int) -> String
+}
+
+extension ChangeDateFormat {
+    func currentTime() -> String {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm"
+        let result = format.string(from: Date())
+        return result
+    }
 }
 
 

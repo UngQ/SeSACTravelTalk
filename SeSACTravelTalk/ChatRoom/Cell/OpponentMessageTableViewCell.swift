@@ -35,7 +35,7 @@ class OpponentMessageTableViewCell: UITableViewCell, ChangeDateFormat {
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         
         nameLabel.text = filteredChatList[row].chatList[chatListRow].user.rawValue
-        nameLabel.font = .boldSystemFont(ofSize: 18)
+        nameLabel.font = .boldSystemFont(ofSize: 16)
         messageLabel.text = filteredChatList[row].chatList[chatListRow].message
         messageLabel.font = .systemFont(ofSize: 16)
         messageLabel.numberOfLines = 0

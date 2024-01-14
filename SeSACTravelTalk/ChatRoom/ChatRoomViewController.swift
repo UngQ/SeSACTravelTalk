@@ -21,11 +21,33 @@ class ChatRoomViewController: UIViewController {
         super.viewDidLoad()
         
         configureChatRoomView()
+        messageButton.addTarget(self, action: #selector(messageButtonClicked), for: .touchUpInside)
+        
     }
+    
+    @IBAction func exitMessageField(_ sender: UITextField) {
+        messageButtonClicked()
+    }
+    
     
     @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+    @objc func messageButtonClicked() {
+        switch messageField.text {
+        case "":
+            return
+        default:
+            let date = Date()
+            print(date)
+            filteredChatList[row].chatList.append(Chat(user: .user, date: currentTime(), message: messageField.text!))
+            messageField.text = ""
+            chatroomTableView.reloadData()
+        }
+    }
+    
+    
 }
 
 //테이블뷰 관련 extension

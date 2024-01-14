@@ -40,6 +40,9 @@
                                                 <rect key="frame" x="8" y="0.0" width="289" height="56"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="exitMessageField:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="vST-Rg-Qv4"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg3-xp-Jvf">
                                                 <rect key="frame" x="297" y="0.0" width="56" height="56"/>
